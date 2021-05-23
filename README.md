@@ -62,4 +62,23 @@
  
  - 핵심 기능의 실행은 다른 객체에 위임하고 부가적인 기능을 제공하는 객체이다.
  - 핵심 기능은 구현하지 않고, 여러 객체에 공통으로 적용할 수 있는 기능을 구현한다.
+
+
+### :star: MVC (Aspect Oriented Programming)
  
+ - MVC란 (Model View Controller) 구조로 사용자 인터페이스와 비지니스 로직을 분리하여 개발 하는 것.
+
+##### Model
+- 데이터 처리를 담당하는 부분. Service,DAO 영역으로 나누어짐.
+- Service 부분은 불필요하게 HTTP통신을 하지 않아야하고 request나 response와 같은 객체를 매개변수로 받아선 안된다.
+- Model 부분의 Service는 view에 종속적인 코드가 없어야 하고 View 부분이 변경되더라도 Service 부분은 그대로 재사용 할 수 있어야 한다.
+
+##### View
+- 사용자 인터페이스 즉 사용자에게 보여지는 부분
+- View는 자신이 요청을 보낼 Controller의 정보만 알고 있어야 한다
+
+##### Controller
+- Model로 부터 받은 결과를 View로 넘겨주는 역할을 한다.
+- Controller에서는 모든 요청 에러와 모델 에러를 처리한다.
+
+
