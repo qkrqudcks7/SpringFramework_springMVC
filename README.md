@@ -82,3 +82,29 @@
 - Controller에서는 모든 요청 에러와 모델 에러를 처리한다.
 
 
+<hr/>
+
+## :question: Spring Bean이란?
+
+- Spring의 DI Container에 의해 관리되는 POJO
+- POJO로써 Spring 애플리케이션을 구성하는 핵심 객체
+- Spring IOC 컨테이너에 의해 생성 및 관리 됨
+
+### :star: 기본적으로 Singleton 방식으로 Bean이 생성된다.
+
+<hr/>
+
+## :question: Spring Bean 등록(@Bean , @Configuration , @Component)
+
+### @Bean
+- bean으로 등록할 클래스를 번거로운 작업 없이 어노테이션을 활용하여 등록하는 방법.
+- 개발자가 직접 제어가 불가능한 라이브러리를 사용할 때 ex)BcryptPasswordEncoder
+- 초기에 설정을 하기 위해 활용할 때
+
+### @Configuration
+- @Bean을 사용하는 클래스에는 반드시 @Configuration 어노테이션이 필요하다. 해당 클래스에서 Bean을 동록하고자 하는 것을 명시하는 의미이다.
+- @Bean만 사용해도 스프링 빈으로 등록이 된다. 하지만 메소드 호출을 통해 객체를 생성할 떄 싱글톤을 보장하지 못한다. 그렇기 때문에 Spring 설정 정보를 위해서는 반드시 @Configuration을 사용해야 한다.
+
+### Component
+- 개발자가 직접 개발한 클래스를 Bean으로 등록할 때 사용.
+- 클래스 단위의 bean을 등록할 대 대체로 사용.
